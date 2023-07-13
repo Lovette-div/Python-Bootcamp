@@ -1,0 +1,104 @@
+#Question 1
+hwWeight = 0.4
+examWeight = 0.5
+discussionWeight = 0.1
+
+homework_grade = float(input("Enter your homework grade: "))
+exam_grade = float(input("Enter your exam grade: "))
+discussion_grade = float(input("Enter your discussion grade: "))
+
+homework = homework_grade * hwWeight
+exam = exam_grade * examWeight
+discussion = discussion_grade * discussionWeight
+total_grade = homework + exam + discussion
+
+print("Your total grade is:", total_grade)
+
+
+
+#Question 2
+# Avoid function does not return a value but a fruitful function returns a value based on its execution.
+# The primary purpose of a void function is to perform specific task without providing values that will used again in the program while
+# a fruitful function performs operation and provides the computed value to the caller to be used elsewhere in the program.
+
+
+
+#Question 3
+P = 10000
+r = 8/100                              #convert 8% to decimal
+n = 12
+t = int(input("Enter number of years: "))
+
+factor = (1 + r / n) ** (n*t)
+amt = P * factor
+print("The final amount after", t, "year(s) is $",amt)
+
+
+
+#Question 4
+def calculateGPA(grade  = int(input("Enter your grade: "))):
+    if grade<50 and grade>0:
+        GPA=0.00
+    elif grade>=50 and grade<=54:
+        GPA=1.00
+    elif grade>=55 and grade<=59:
+        GPA=1.50
+    elif grade>=60 and grade<=64:
+        GPA=2.00
+    elif grade>=65 and grade<=69:
+        GPA=2.50
+    elif grade>=70 and grade<=74:
+        GPA=3.00
+    elif grade>=75 and grade<=79:
+        GPA=3.50
+    elif grade in range(85,101):
+        GPA=4.00
+    else:
+        print("Error")
+    return GPA
+print(calculateGPA())
+GPA = calculateGPA()
+
+def getHonours(GPA):
+    if GPA>=3.85 and GPA<=4.0:
+        print("honour = Summa Cum Laude")
+    elif GPA>=3.70 and GPA<=3.84:
+        print("honour = Magna Cum Laude")
+    elif GPA>=3.50 and GPA<=3.69:
+        print("honour = Cum Laude")
+    else:
+        print("honour = Well done")
+getHonours(GPA)
+
+        
+        
+        
+#Question 5
+r = float(input("Enter the radius: "))
+area = 22/7 * (r**2)
+print("Area =", area)
+
+
+#Question 6 (a)(b)
+def is_triangle(a, b, c):
+    if a + b >= c and a + c >= b and b + c >= a:
+        return True
+    else:
+        return False
+print(is_triangle(12,1,1))
+
+def can_form():
+    a = int(input("Enter first length: "))
+    b = int(input("Enter second length: "))
+    c = int(input("Enter third length: "))
+
+    if is_triangle(a, b, c):
+        print("True")
+        print("A triangle can be formed with the given lengths")
+    else:
+        print("False")
+        print("A triangle cannot be formed with the given lengths")
+
+can_form()
+
+
