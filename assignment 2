@@ -1,0 +1,148 @@
+#1
+def compareStrings(garland,flower):
+    num_garlandinflower = 0
+    for item in garland:
+        if item in flower:
+            num_garlandinflower += 1
+    return num_garlandinflower
+print(compareStrings("Kg","AKuuGg"))
+    
+
+ 
+ 
+#2
+def grade_and_gpa(grade):
+    if grade<50 and grade>0:
+        letter_grade= "E"
+        GPA=0.00
+    elif grade>=50 and grade<=54:
+        letter_grade= "D"
+        GPA=1.00
+    elif grade>=55 and grade<=59:
+        letter_grade= "D+"
+        GPA=1.50
+    elif grade>=60 and grade<=64:
+        letter_grade= "C"
+        GPA=2.00
+    elif grade>=65 and grade<=69:
+        letter_grade= "C+"
+        GPA=2.50
+    elif grade>=70 and grade<=74:
+        letter_grade= "B"
+        GPA=3.00
+    elif grade>=75 and grade<=79:
+        letter_grade= "B+"
+        GPA=3.50
+    elif grade >= 80 and grade < 85:
+        letter_grade = "A"
+        GPA = 4.00
+    elif grade in range(85,101):
+        letter_grade= "A+"
+        GPA=4.00
+    else:
+        letter_grade = "I"
+        GPA=0.00
+    return letter_grade, GPA
+
+def honours(GPA):
+    if GPA >= 3.85 and GPA <= 4.0:
+        return "Summa Cum Laude"
+    elif GPA >= 3.70 and GPA <= 3.84:
+        return "Magna Cum Laude"
+    elif GPA >= 3.50 and GPA <= 3.69:
+        return "Cum Laude"
+    else:
+        return "None"
+
+def cumulative_gpa():
+    total_credit_weight = 0.0
+    total_gpa = 0.0
+    letgrade_count = {}                                                                   #stores the count of each letter grade 
+    courses = int(input("how many courses would you like to enter information for: "))
+    
+    for _ in range(courses):
+        grade = float(input("Enter score (out of 100): "))
+        credit_weight = float(input("Enter the credit weighting of the course: "))
+        
+        letter_grade, grade_point = grade_and_gpa(grade)
+        total_gpa += grade_point * credit_weight
+        total_credit_weight += credit_weight
+        
+        if letter_grade in letgrade_count:                                         #Updates the count of letter_grade
+            letgrade_count[letter_grade] += 1
+        else:
+            letgrade_count[letter_grade] = 1
+            
+        print("Letter Grade: ",letter_grade, "Grade Point: ",grade_point)
+       
+    cumulative = total_gpa / total_credit_weight
+    print("Your cumulative GPA: ",cumulative)
+    print("Honour:",honours(cumulative))
+    for letter, count in letgrade_count.items():
+        print(f"Number of {letter}s: {count}")
+
+       
+cumulative_gpa()       
+
+
+
+
+#3
+number = int(input("Enter a number greater than zero: "))
+if number < 1:
+            print("Please enter a positive integer.")
+else:
+    total_sum = 0
+    for i in range(1, number + 1):
+        total_sum += i
+    print(f"The sum is {total_sum}.")
+
+
+
+#4
+def customLen(word):
+    x = 0
+    for i in word:
+        x += 1
+    return x
+print(customLen(input("Enter any word: ")))
+
+
+
+
+#5a
+x = int(input("Enter a number: "))
+print("Multiplication timetable of", x)
+for i in range(1,13):
+    product = i * x
+    print(i, "*", x," = ",product )
+
+
+
+
+#5b
+magic_number = int(input("Enter the number: "))
+secret_number = 60
+if magic_number>secret_number and magic_number<100:
+    print("That number is too high!")
+elif magic_number>1 and magic_number<secret_number:
+    print("That number is too low!")
+elif magic_number==60:
+    print("Hooray! You got it correct")
+else:
+    print("Enter a number between 1 and 100")
+    
+    
+ 
+ 
+ 
+#6
+def is_vowel(alphabet):
+    vowel = "AAeEIiOoUu"
+    for letter in vowel:
+        if alphabet in vowel:
+            return True
+        else:
+            return False
+print(is_vowel(input("Enter a vowel: ")))
+
