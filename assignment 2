@@ -105,7 +105,7 @@ def customLen(word):
     for i in word:
         x += 1
     return x
-print(customLen(input("Enter any word: ")))
+print("Number of characters =", customLen(input("Enter any word: ")))
 
 
 
